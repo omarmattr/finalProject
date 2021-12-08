@@ -15,7 +15,7 @@ class store extends Model
 
     function rating(){
         return $this->hasMany(review::class)->selectRaw
-        ('count(store_id) as s, store_id, sum(rate)/count(store_id) as rating') ->groupBy('store_id');
+        ('store_id, sum(rate)/count(store_id) as rating') ->groupBy('store_id');
     }
 
     function rating_store(){
