@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreRequest;
 use App\Models\Category;
 use App\Models\store;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class StoreController extends Controller
@@ -17,6 +16,11 @@ class StoreController extends Controller
         $stores = store::with("rating")->paginate(2);
 //        dd($categories);
         return view("store.index", compact('stores'));
+    }
+    public function deleted()
+    {
+        $stores = store::onlyTrashed()->with("rating")->paginate(2);
+        return view("store.deleted", compact('stores'));
     }
     public function indexUser()
     {

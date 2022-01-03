@@ -150,10 +150,17 @@
                                 <li><a href="{{URL('/category/create')}}">Add Category</a></li>
                             </ul>
                         </div>
+                        <div class="card">
+                            <ul class="sidebar-nav">
+                                <li><a href="{{URL('/category/deleted')}}">Category Deleted</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="accordion">
+
+        </li>
+        <li>   <div id="accordion">
                 <div class="card cola">
                     <div class="card" id="headingTwo">
                         <h5 class="mb-0">
@@ -170,9 +177,16 @@
                                 <li><a href="{{URL('/store/create')}}">Add Store</a></li>
                             </ul>
                         </div>
+                        <div class="card">
+                            <ul class="sidebar-nav">
+                                <li><a href="{{URL('/store/deleted')}}">Store Deleted</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+           </li>
+        <li>
             <div id="accordion">
                 <div class="card cola">
                     <div class="card " id="headingThree">
@@ -188,19 +202,20 @@
 
                 </div>
             </div>
-            <div id="accordion">
+        </li>
+        <li>            <div id="accordion">
                 <div class="card cola">
                     <div class="card " >
                         <h5 class="mb-0">
-                                <a class="btn btn-link collapsed cola-btn" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
+                            <a class="btn btn-link collapsed cola-btn" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+                                {{ __('Logout') }}
+                            </a>
                         </h5>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
 
 
                     </div>

@@ -30,6 +30,7 @@ Route::get("/",function (){
     return view("auth.login");
 });
 Route::get('/category', [CategoryController::class, 'index'])->name('category')->middleware('auth');
+Route::get('/category/deleted', [CategoryController::class, 'deleted'])->middleware('auth');
 
 Route::get('/user/stores',[StoreController::class, "indexUser"]);
 Route::get('/user/search',[SearchController::class, "index"]);
@@ -52,6 +53,8 @@ Route::post('/category/create', [CategoryController::class, "store"])->middlewar
 
 
 Route::get('/store', [StoreController::class, "index"])->name('store')->middleware('auth');
+Route::get('/store/deleted', [StoreController::class, 'deleted'])->middleware('auth');
+
 
 Route::get('/store/update/{id}', [StoreController::class, "edit"])->middleware('auth');
 Route::post('/store/update/{id}', [StoreController::class, "update"])->middleware('auth');

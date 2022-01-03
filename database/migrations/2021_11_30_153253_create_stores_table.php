@@ -20,6 +20,8 @@ class CreateStoresTable extends Migration
             $table->foreignId("categoryId")->constrained("categories")->cascadeOnDelete();
             $table->string("image")->nullable();
             $table->timestamps();
+            $table->softDeletes()->nullable();
+
         });
     }
 

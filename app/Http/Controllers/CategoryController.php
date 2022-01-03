@@ -17,6 +17,12 @@ class CategoryController extends Controller
         return view("category.index", compact('categories'));
     }
 
+    public function deleted()
+    {
+        $categories = category::onlyTrashed()->withCount("numOfStores")->paginate(2);
+        return view("category.deleted", compact('categories'));
+    }
+
     public function indexUser()
     {
         $categories = category::paginate(4);

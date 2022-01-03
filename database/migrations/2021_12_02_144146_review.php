@@ -19,6 +19,7 @@ class Review extends Migration
             $table->string("rate");
             $table->foreignId("store_id")->constrained("stores")->cascadeOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
